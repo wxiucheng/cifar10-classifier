@@ -1,0 +1,26 @@
+model:
+  name: simple_cnn
+  num_classes: 10
+  pretrained: true
+
+seed: 42
+
+dataset:
+  name: cifar10
+  data_root: data/cifar-10-python
+  val_ratio: 0.1
+  num_workers: 4
+  pin_memory: true
+  shuffle: True
+
+train:
+  batch_size: 1280
+  epochs: 50
+  device: cuda
+  criterion: cross_entropy
+  optimizer: adam
+  lr: 0.001
+  output_dir: outputs/checkpoints/simplecnn_cifar10
+
+test:
+  ckpt: outputs/checkpoints/simplecnn_cifar10/best.pt

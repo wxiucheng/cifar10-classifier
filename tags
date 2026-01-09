@@ -1,0 +1,68 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/wxc/code/practice/cifar10-classifier/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+CIFAR10 Classifier	README.md	/^# CIFAR10 Classifier$/;"	c
+CIFAR100Transforms	src/datasets/cifar100.py	/^class CIFAR100Transforms:$/;"	c
+CIFAR10Transforms	src/datasets/cifar10.py	/^class CIFAR10Transforms:$/;"	c
+IMAGE_SIZE	src/datasets/cifar10.py	/^    IMAGE_SIZE = 32$/;"	v	class:CIFAR10Transforms
+IMAGE_SIZE	src/datasets/cifar100.py	/^    IMAGE_SIZE = 32$/;"	v	class:CIFAR100Transforms
+MEAN	src/datasets/cifar10.py	/^    MEAN = (0.4914, 0.4822, 0.4465)$/;"	v	class:CIFAR10Transforms
+MEAN	src/datasets/cifar100.py	/^    MEAN = (0.5071, 0.4867, 0.4408)$/;"	v	class:CIFAR100Transforms
+ResNet18	src/models/resnet18.py	/^class ResNet18(nn.Module):$/;"	c
+STD	src/datasets/cifar10.py	/^    STD = (0.2023, 0.1994, 0.2010)$/;"	v	class:CIFAR10Transforms
+STD	src/datasets/cifar100.py	/^    STD = (0.2675, 0.2565, 0.2761)$/;"	v	class:CIFAR100Transforms
+SimpleCNN	src/models/cnn.py	/^class SimpleCNN(nn.Module):$/;"	c
+T	src/datasets/cifar10.py	/^from torchvision import transforms as T$/;"	x	nameref:unknown:transforms
+T	src/datasets/cifar100.py	/^from torchvision import datasets, transforms as T$/;"	x	nameref:unknown:transforms
+T	src/test/test_gradio.py	/^from torchvision import transforms as T$/;"	x	nameref:unknown:transforms
+__all__	src/datasets/__init__.py	/^__all__ = [$/;"	v
+__all__	src/models/__init__.py	/^__all__ = ["build_model", "SimpleCNN", "ResNet18"]$/;"	v
+__init__	src/models/cnn.py	/^    def __init__(self, num_classes=10):$/;"	m	class:SimpleCNN
+__init__	src/models/resnet18.py	/^    def __init__(self, num_classes=10, pretrained=True):$/;"	m	class:ResNet18
+build_cifar100_dataloaders	src/datasets/cifar100.py	/^def build_cifar100_dataloaders(data_root, val_ratio,batch_size, num_workers, pin_memory, shuffle/;"	f
+build_cifar100_datasets	src/datasets/cifar100.py	/^def build_cifar100_datasets(data_root, val_ratio):$/;"	f
+build_cifar10_dataloaders	src/datasets/cifar10.py	/^def build_cifar10_dataloaders(data_root, batch_size, val_ratio, num_workers, pin_memory, shuffle/;"	f
+build_cifar10_datasets	src/datasets/cifar10.py	/^def build_cifar10_datasets(data_root, val_ratio):$/;"	f
+build_criterion	src/test/test_dataset.py	/^def build_criterion(cfg):$/;"	f
+build_dataloader	src/datasets/__init__.py	/^def build_dataloader(cfg):$/;"	f
+build_model	src/models/__init__.py	/^def build_model(cfg):$/;"	f
+c10	Makefile	/^c10:$/;"	t
+c100	Makefile	/^c100:$/;"	t
+evaluate	src/train/train.py	/^def evaluate(model, dataloader, criterion, device):  # 评估和训练区别是不需要优化器$/;"	f
+forward	src/models/cnn.py	/^    def forward(self, x):$/;"	m	class:SimpleCNN
+forward	src/models/resnet18.py	/^    def forward(self, x):$/;"	m	class:ResNet18
+gr	src/test/test_gradio.py	/^import gradio as gr$/;"	I	nameref:module:gradio
+load_cfg	src/test/test_dataset.py	/^def load_cfg(path):$/;"	f
+load_cfg	src/test/test_gradio.py	/^def load_cfg(path):$/;"	f
+load_cfg	src/train/train.py	/^def load_cfg(path):$/;"	f
+load_model_and_transform	src/test/test_gradio.py	/^def load_model_and_transform(cfg, ckpt_path, device):$/;"	f
+main	src/test/test_dataset.py	/^def main():$/;"	f
+main	src/train/train.py	/^def main():$/;"	f
+nn	src/models/cnn.py	/^import torch.nn as nn$/;"	I	nameref:module:torch.nn
+nn	src/models/resnet18.py	/^import torch.nn as nn$/;"	I	nameref:module:torch.nn
+np	src/utils/seed.py	/^import numpy as np$/;"	I	nameref:module:numpy
+parse_args	src/test/test_dataset.py	/^def parse_args():$/;"	f
+parse_args	src/test/test_gradio.py	/^def parse_args():$/;"	f
+parse_args	src/train/train.py	/^def parse_args():$/;"	f
+resolve_ckpt_path	src/test/test_dataset.py	/^def resolve_ckpt_path(cfg, ckpt_arg):$/;"	f
+run	Makefile	/^run:$/;"	t
+run_training	src/train/train.py	/^def run_training(model, train_loader, val_loader, test_loader,$/;"	f
+save_checkpoint	src/train/train.py	/^def save_checkpoint(path, model, optimizer, epoch, best_acc, class_name,):$/;"	f
+set_seed	src/utils/seed.py	/^def set_seed(seed):$/;"	f
+test	src/datasets/cifar10.py	/^    def test(cls):$/;"	m	class:CIFAR10Transforms
+test	src/datasets/cifar100.py	/^    def test(cls):$/;"	m	class:CIFAR100Transforms
+test-dataset	Makefile	/^test-dataset:$/;"	t
+test-gradio	Makefile	/^test-gradio:$/;"	t
+train	Makefile	/^train:$/;"	t
+train	src/datasets/cifar10.py	/^    def train(cls):$/;"	m	class:CIFAR10Transforms
+train	src/datasets/cifar100.py	/^    def train(cls):$/;"	m	class:CIFAR100Transforms
+train_one_epoch	src/train/train.py	/^def train_one_epoch(model, dataloader, criterion, optimizer, device):$/;"	f
+目录结构	README.md	/^## 目录结构$/;"	s	chapter:CIFAR10 Classifier

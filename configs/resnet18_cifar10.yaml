@@ -1,0 +1,25 @@
+# configs/resnet18_cifar10.yaml
+
+model:
+  name: resnet18
+  num_classes: 10
+  pretrained: True
+
+seed: 42
+
+dataset:
+  name: cifar10
+  data_root: data/cifar-10-python
+  val_ratio: 0.1
+  num_workers: 4
+  pin_memory: true
+  shuffle: True
+
+train:
+  batch_size: 2040
+  epochs: 50
+  device: cuda
+  criterion: cross_entropy
+  optimizer: adam
+  lr: 0.001
+  output_dir: outputs/checkpoints/resnet18_cifar10
