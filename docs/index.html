@@ -61,43 +61,21 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">DreamText: High Fidelity Scene Text Synthesis</h1>
+          <h1 class="title is-1 publication-title">CIFAR-10 Classifier</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://codegoat24.github.io/"><b>Yibin Wang</b></a>,</span>
-            <span class="author-block">
-              <a href="https://weizhonz.github.io/"><b>Weizhong Zhang</b></a>,</span>
-            <span class="author-block">
-              <a href="https://scholar.google.com.hk/citations?user=_cZgJawAAAAJ&hl=zh-CN"><b>Honghui Xu</b></a><sup></sup>,</span>
-            <span class="author-block">
-              <a href="https://cjinfdu.github.io/"><b>Cheng Jin</b></a><sup>†</sup>
+              <a href="https://codegoat24.github.io/"><b>Xiucheng Wang</b></a>,</span>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup></sup>Fudan University</span>
+              <span class="author-block"><sup></sup>Beihang University</span>
           </div>
-          <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup></sup>Shanghai Innovation Institute</span>
-          </div>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup></sup>Innovation Center of Calligraphy and Painting Creation Technology, MCT</span>
-        </div>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup></sup>Shanghai Key Laboratory of Intelligent Information Processing</span>
-        </div>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup></sup>Zhejiang University of Technology</span>
-        </div>
-          <span class=""><sup>†</sup>Corrsponding Author</span>
-        <div class="is-size-5 publication-authors">
-            <span class="author-block">CVPR 2025</span>
-        </div>
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2405.14701"
+                <a href="https://github.com/wxiucheng/cifar10-classifier"
                     class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -107,7 +85,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/CodeGoat24/DreamText"
+                <a href="https://github.com/wxiucheng/cifar10-classifier"
                     class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -135,7 +113,7 @@
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div> 
-        <img src="./static/images/display.png"
+        <img src="./static/images/model_predict.png"
         class="interpolation-image"
         alt="Interpolate start reference image."/>
         
@@ -145,7 +123,7 @@
         </div>
       <div class="hero-body">
         <h2 class="subtitle has-text-justified">
-          <p class="has-text-centered">Our DreamText is capable of synthesize high-fidelity texts in the given scene.</p>
+          <p class="has-text-centered">gradio demo使用展示.</p>
         </h2>
       </div>
     </div>
@@ -164,15 +142,7 @@
         <!-- <img src='static/images/method_overview.png' id="framework"><br><br> -->
         <div class="content has-text-justified">
           <p>
-            Scene text synthesis involves rendering specified texts onto arbitrary images. 
-Current methods typically formulate this task in an end-to-end manner but lack effective character-level guidance during training.
-Besides, their text encoders, pre-trained on a single font type, struggle to adapt to the diverse font styles encountered in practical applications.
-Consequently, these methods suffer from character distortion, repetition, and absence, particularly in polystylistic scenarios.
-To this end, this paper proposes DreamText for high-fidelity scene text synthesis.
-Our key idea is to reconstruct the diffusion training process, introducing more refined guidance tailored to this task, to expose and rectify the model's attention at the character level and strengthen its learning of text regions.
-This transformation poses a hybrid optimization challenge, involving both discrete and continuous variables. To effectively tackle this challenge, we employ a heuristic alternate optimization strategy. Meanwhile, we jointly train the text encoder and generator to comprehensively learn and utilize the diverse font present in the training dataset. This joint training is seamlessly integrated into the alternate optimization process, fostering a synergistic relationship between learning character embedding and re-estimating character attention.
-Specifically, in each step, we first encode potential character-generated position information from cross-attention maps into latent character masks. These masks are then utilized to update the representation of specific characters in the current step, which, in turn, enables the generator to correct the character's attention in the subsequent steps.
-Both qualitative and quantitative results demonstrate the superiority of our method to the state of the art.
+            简单 CNN 与 ResNet18 两套模型，支持预训练微调;统一的 YAML 配置驱动（模型/数据/训练）;训练、验证、测试全流程与最优/最后权重保存;评估脚本与 Gradio 可视化 Demo;
           </p>
         </div>
       </div>
@@ -183,103 +153,20 @@ Both qualitative and quantitative results demonstrate the superiority of our met
 
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Method Overview. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Problems in Existing Methods</h2>
-        <img src='static/images/problems.png' id="framework"><br>
+        <h2 class="title is-3">图片展示</h2>
+
+        <!-- 建议把图片放到 static/images/ 下 -->
+        <img src="./static/images/dog1.png" id="framework"><br>
+
         <div class="content has-text-justified">
-          <p>
-            Current methods encounter significant challenges, i.e., character repetition and absence
-(top) and character distortion (bottom).
-          </p>
-        </div>
-        <img src='static/images/problem_visualization.png' id="framework"><br>
-        <div class="content has-text-justified">
-          <p>
-            The problematic results rendered by characters’ attention maps (AMs).
+          <p class="has-text-centered">
+            这里展示模型在 CIFAR-10 上的预测效果示例（GT / Pred 可视化）。
           </p>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-
-<!-- Begin method overview -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Method Overview. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Heuristic Alternate Optimization</h2>
-        <img src='static/images/architecture.png' id="framework"><br>
-        <div class="content has-text-justified">
-          <p>
-            We develop a heuristic iterative optimization pipeline to enable efficient training. Our key idea is to explicitly model the potential character positions in attention maps by encoding them into latent character masks in each step. These masks are then used to enhance the learning of the text encoder through our carefully crafted losses, facilitating the calibration of character attention in the subsequent step. This heuristic iterative process allows our model to dynamically alternate between optimizing character embedding and re-estimating character generation positions. 
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End method overview -->
-
-
-<!-- Begin Qualitative Comparison -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Method Overview. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Qualitative Comparisons</h2>
-        <img src='static/images/comparison.png' id="framework">
-        <div class="content has-text-centered">
-        </div>
-        <img src='static/images/comparison_2.png' id="framework">
-        <div class="content has-text-centered">
-          <img src='static/images/comparison_3.png' id="framework">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End Qualitative Comparison -->
-
-
-<!-- Begin More Visual Results. -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Method Overview. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">More Visual Results</h2>
-        <img src='static/images/more_visual_result.png' id="framework">
-        <div class="content has-text-centered">
-
-        </div>
-        <img src='static/images/more_visual_result_2.png' id="framework">
-        <div class="content has-text-centered">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End More Visual Results. -->
-
-
-
-
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@inproceedings{DreamText,
-      title={High Fidelity Scene Text Synthesis},
-      author={Wang, Yibin and Zhang, Weizhong and Honghui, Xu and Jin, Cheng},
-      booktitle={CVPR},
-      year={2025}
-    }
-    </code></pre>
   </div>
 </section>
 

@@ -21,6 +21,8 @@
 
 ![识别示例](figures/dog1.png)
 
+
+
 ## 🔧 Usage
 
 ### Environment Setup
@@ -31,11 +33,16 @@ conda activate cifar10-classifier
 pip install -r requirements.txt
 ```
 
+
+
 ### Download our Pre-trained Models
+
 Download our available [checkpoints](https://drive.google.com/drive/folders/142L5cFw0CBoW0s2UxwODDDa38q0km0eh?usp=sharing) and put them in the corresponding directories in `./outputs/checkpoints`.
 
 
+
 ## 🚀 Gradio Demo
+
 You can run the demo locally by
 ```bash
 # simplecnn demo
@@ -46,7 +53,10 @@ python demo_gradio.py --cfg configs/resnet18_cifar10.yaml
 ```
 <img src=figures/model_predict.png style="zoom:30%" />
 
+
+
 ## 🧪 Test & Visualization
+
 Run evaluation and export a few sample images for visualization:
 ```bash
 # test + save visualization images
@@ -56,9 +66,12 @@ python test.py --cfg configs/simplecnn10_cifar10.yaml
 python test.py --cfg configs/resnet18_cifar10.yaml
 ```
 
+
+
 ## 📁 Dataset
 
 This project expects datasets under the project root `data/`:
+
 
 
 ## 💻 Training
@@ -73,7 +86,10 @@ python train.py --cfg configs/simplecnn10_cifar10.yaml
 python train.py --cfg configs/resnet18_cifar10.yaml
 ```
 
+
+
 ## ✨ Evaluation
+
 Set the parameters in `./configs/test.yaml` and run:
 
 ```bash
